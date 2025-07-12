@@ -30,6 +30,12 @@
             number[1] = temp;
         }
 
+        public static void SumSub(int num1, int num2, out int sum, out int sub)
+        {
+            sum = num1 + num2;
+            sub = num1 - num2;
+        }
+
 
         static void Main(string[] args)
         {
@@ -58,21 +64,28 @@
 
             #region Q02
             //2- Explain the difference between passing (Reference type parameters) by value and by reference then write a suitable c# example.
-           
 
-            int[] arr = { 10, 20 };
+            //int[] arr = { 10, 20 };
 
-            Console.WriteLine("Before Swapping");
-            Console.WriteLine($"arr[0] = {arr[0]}, arr[1] = {arr[1]}");  //arr[0] = 10, arr[1] = 20
+            //Console.WriteLine("Before Swapping");
+            //Console.WriteLine($"arr[0] = {arr[0]}, arr[1] = {arr[1]}");  //arr[0] = 10, arr[1] = 20
 
-            SwapByValueRefType(arr);
-            Console.WriteLine("Afer Swapping by vlaue");
-            Console.WriteLine($"arr[0] = {arr[0]}, arr[1] = {arr[1]}"); //arr[0] = 20, arr[1] = 10
+            //SwapByValueRefType(arr);
+            //Console.WriteLine("Afer Swapping by vlaue");
+            //Console.WriteLine($"arr[0] = {arr[0]}, arr[1] = {arr[1]}"); //arr[0] = 20, arr[1] = 10
 
-            SwapByRefRefType(ref arr);
-            Console.WriteLine("Afer Swapping by Ref");
-            Console.WriteLine($"arr[0] = {arr[0]}, arr[1] = {arr[1]}"); //arr[0] = 10, arr[1] = 20
+            //SwapByRefRefType(ref arr);
+            //Console.WriteLine("Afer Swapping by Ref");
+            //Console.WriteLine($"arr[0] = {arr[0]}, arr[1] = {arr[1]}"); //arr[0] = 10, arr[1] = 20
 
+            #endregion
+
+            #region Q03
+            /* 3- Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers */
+            int a = 3, b = 7;
+            SumSub(a, b, out int sum, out int sub);
+
+            Console.WriteLine($"Sum = {sum}, Sub = {sub}"); //Sum = 10, Sub = -4
             #endregion
         }
     }
