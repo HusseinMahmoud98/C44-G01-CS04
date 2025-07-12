@@ -107,6 +107,17 @@
             return new string(strToArrayOfChar); //return the new string object
         }
 
+        public static int GetSumOfArray(int[] numbers)
+        {
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                sum += numbers[i];
+            }
+
+            return sum;
+        }
+
         static void Main(string[] args)
         {
             #region Q01
@@ -229,40 +240,45 @@
 
             #region Q08
             //8 - Create a function named "ChangeChar" to modify a letter in a certain position(0 based) of a string, replacing it with a different letter
-            string str = "Hussein Mahmoud";
+            //string str = "Hussein Mahmoud";
 
-            str = ChangeChar(str, 7, '_');
+            //str = ChangeChar(str, 7, '_');
 
-            Console.WriteLine(str);  //Hussein_Mahmoud
+            //Console.WriteLine(str);  //Hussein_Mahmoud
 
             #endregion
 
             #region Q09
             //9- . Write a program that prints an identity matrix using for loop, in other words takes a value n from the user and shows the identity table
             //     of size n* n.
-            Console.Write("Enter the rank of the matrix: ");
+            //Console.Write("Enter the rank of the matrix: ");
 
-            int rank = int.Parse(Console.ReadLine());
+            //int rank = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < rank; i++)
-            {
-                for (int j = 0; j < rank; j++)
-                {
-                    if (i == j)
-                    {
-                        Console.Write("1\t");
-                    }
+            //for (int i = 0; i < rank; i++)
+            //{
+            //    for (int j = 0; j < rank; j++)
+            //    {
+            //        if (i == j)
+            //        {
+            //            Console.Write("1\t");
+            //        }
 
-                    else
-                    {
-                        Console.Write("0\t");
-                    }
-                }
+            //        else
+            //        {
+            //            Console.Write("0\t");
+            //        }
+            //    }
 
-                Console.Write("\n");  //create new line for the new row
-            }
+            //    Console.Write("\n");  //create new line for the new row
+            //}
 
-            
+            #endregion
+
+            #region Q10
+            // 10- Write a program in C# Sharp to find the sum of all elements of the array.
+            int[] arr = { 1, 2, 3, 4, 5, 7, -2, 50, 0 };
+            Console.WriteLine($"Sum of array is {GetSumOfArray(arr)}");  //Sum of array is 70
             #endregion
 
         }
