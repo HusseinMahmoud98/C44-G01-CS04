@@ -493,25 +493,25 @@ namespace Assignment04
 
             #region Q17
 
-            Console.WriteLine("Enter the Dimention array N: ");
-            int N = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the Dimention array N: ");
+            //int N = int.Parse(Console.ReadLine());
 
-            int[] arr = new int[N];
+            //int[] arr = new int[N];
 
 
-            Console.WriteLine("Enter the elements of the array: ");
-            for (int i = 0; i < N; i++)
-            {
-                arr[i] = int.Parse(Console.ReadLine());
-            }
+            //Console.WriteLine("Enter the elements of the array: ");
+            //for (int i = 0; i < N; i++)
+            //{
+            //    arr[i] = int.Parse(Console.ReadLine());
+            //}
 
-            Console.WriteLine("in reversed order");
+            //Console.WriteLine("in reversed order");
 
-            for (int i = N - 1; i >= 0; i--)
-            {
-                Console.Write(arr[i] + " ");
+            //for (int i = N - 1; i >= 0; i--)
+            //{
+            //    Console.Write(arr[i] + " ");
 
-            }
+            //}
 
             #endregion
 
