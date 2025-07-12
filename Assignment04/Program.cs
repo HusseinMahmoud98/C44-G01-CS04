@@ -340,24 +340,47 @@
 
             #region Q12
             /* 12- Write a program in C# Sharp to find maximum and minimum element in an array*/
+            //int[] arr = { 1, 2, 0, 8, 7 };
+
+            //int max = arr[0], min = arr[0];
+
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    if (arr[i] > max)
+            //    {
+            //        max = arr[i];
+            //    }
+
+            //    if (arr[i] < min)
+            //    {
+            //        min = arr[i];
+            //    }
+            //}
+
+            //Console.WriteLine($"Max = {max}, Min = {min}");  //Max = 8, Min = 0
+            #endregion
+
+            #region Q13
+            //13- Write a program in C# Sharp to find the second largest element in an array.
             int[] arr = { 1, 2, 0, 8, 7 };
 
-            int max = arr[0], min = arr[0];
-
-            for (int i = 1; i < arr.Length; i++)
+            //Sort the array in descending order
+            for (int i = 0; i < arr.Length - 1; i++)
             {
-                if (arr[i] > max)
+                for (int j = 0; j < arr.Length - i - 1; j++)
                 {
-                    max = arr[i];
-                }
-
-                if (arr[i] < min)
-                {
-                    min = arr[i];
+                    if (arr[j] < arr[j + 1])
+                    {
+                        //swap
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
                 }
             }
 
-            Console.WriteLine($"Max = {max}, Min = {min}");  //Max = 8, Min = 0
+            Console.WriteLine($"Second largest element in the array is {arr[1]}");  //7
+
             #endregion
 
 
