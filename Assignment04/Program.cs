@@ -84,6 +84,19 @@
             }
         }
 
+        public static uint GetFactorial(uint number)
+        {
+            if (number == 0 || number == 1)
+            {
+                return 1;
+            }
+
+            else
+            {
+                return GetFactorial(number - 1) * number;
+            }
+        }
+
         static void Main(string[] args)
         {
             #region Q01
@@ -154,8 +167,6 @@
 
             #endregion
 
-
-
             #region Q05
             //5- Create a function named "IsPrime", which receives an integer number
             //   and retuns true if it is prime, or false if it is not:
@@ -183,12 +194,27 @@
 
             #region Q06
             // 6 - Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
-            int[] arr = { 3, 2, 6, 11, -3, 9 };
-            int Min = 0, Max = 0;
-            MinMaxArray(ref arr, ref Max, ref Min);
+            //int[] arr = { 3, 2, 6, 11, -3, 9 };
+            //int Min = 0, Max = 0;
+            //MinMaxArray(ref arr, ref Max, ref Min);
 
-            Console.WriteLine($"Max = {Max}, Min = {Min}"); //Max = 11, Min = -3
+            //Console.WriteLine($"Max = {Max}, Min = {Min}"); //Max = 11, Min = -3
 
+            #endregion
+
+            #region Q07
+            ////7- Create function to calculate the factorial of the number specified as parameter
+            uint number;
+            bool isNum;
+
+            do
+            {
+                Console.Write("Enter a positive number: ");
+                isNum = uint.TryParse(Console.ReadLine(), out number);
+            }
+            while (!isNum);
+
+            Console.WriteLine($"Factorial of {number} is {GetFactorial(number)}");
             #endregion
         }
     }
