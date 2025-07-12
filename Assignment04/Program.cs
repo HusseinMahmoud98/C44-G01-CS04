@@ -1,4 +1,6 @@
-﻿namespace Assignment04
+﻿using System.Text;
+
+namespace Assignment04
 {
     internal class Program
     {
@@ -362,24 +364,24 @@
 
             #region Q13
             //13- Write a program in C# Sharp to find the second largest element in an array.
-            int[] arr = { 1, 2, 0, 8, 7 };
+            //int[] arr = { 1, 2, 0, 8, 7 };
 
-            //Sort the array in descending order
-            for (int i = 0; i < arr.Length - 1; i++)
-            {
-                for (int j = 0; j < arr.Length - i - 1; j++)
-                {
-                    if (arr[j] < arr[j + 1])
-                    {
-                        //swap
-                        int temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
-                    }
-                }
-            }
+            ////Sort the array in descending order
+            //for (int i = 0; i < arr.Length - 1; i++)
+            //{
+            //    for (int j = 0; j < arr.Length - i - 1; j++)
+            //    {
+            //        if (arr[j] < arr[j + 1])
+            //        {
+            //            //swap
+            //            int temp = arr[j];
+            //            arr[j] = arr[j + 1];
+            //            arr[j + 1] = temp;
+            //        }
+            //    }
+            //}
 
-            Console.WriteLine($"Second largest element in the array is {arr[1]}");  //7
+            //Console.WriteLine($"Second largest element in the array is {arr[1]}");  //7
 
             #endregion
 
@@ -392,38 +394,66 @@
              * Note:
              * Array values will be taken from the user If you have input like 1111111 then the distance is the number of Cells between the first and the last cell. 
              */
-            int N, longest_distance = 0, distance = 0;
-            Console.Write("Enter the number of cells: ");
-            N = int.Parse(Console.ReadLine());
+            //int N, longest_distance = 0, distance = 0;
+            //Console.Write("Enter the number of cells: ");
+            //N = int.Parse(Console.ReadLine());
 
-            int[] Cells = new int[N];
+            //int[] Cells = new int[N];
 
 
-            Console.WriteLine("Enter cells' values");
-            for (int i = 0; i < N; i++)
-            {
-                Cells[i] = int.Parse(Console.ReadLine());
-            }
+            //Console.WriteLine("Enter cells' values");
+            //for (int i = 0; i < N; i++)
+            //{
+            //    Cells[i] = int.Parse(Console.ReadLine());
+            //}
 
-            //get the largest distance
-            for (int i = 0; i < N; i++)
-            {
-                for (int j = i + 1; j < N; j++)
-                {
-                    if (Cells[i] == Cells[j])
-                    {
-                        distance = j - i - 1;
+            ////get the largest distance
+            //for (int i = 0; i < N; i++)
+            //{
+            //    for (int j = i + 1; j < N; j++)
+            //    {
+            //        if (Cells[i] == Cells[j])
+            //        {
+            //            distance = j - i - 1;
 
-                        if (distance > longest_distance)
-                        {
-                            longest_distance = distance;
-                        }
-                    }
-                }
-            }
+            //            if (distance > longest_distance)
+            //            {
+            //                longest_distance = distance;
+            //            }
+            //        }
+            //    }
+            //}
 
-            Console.WriteLine($"longest distance = {longest_distance}");
+            //Console.WriteLine($"longest distance = {longest_distance}");
             #endregion
+
+            #region Q15
+            /*15 Given a list of space separated words, reverse the order of the words. 
+             *  Check the Split Function (Member in String Class) Output will be a Single Console.WriteLine Statement
+             */
+
+            Console.WriteLine("Enter the statment");
+
+            string statment = Console.ReadLine();
+            string[] statment_arr;
+
+
+
+            statment_arr = statment.Split(' ', statment.Length);
+            StringBuilder reversed = new StringBuilder();
+
+            for (int i = statment_arr.Length - 1; i >= 0; i--)
+            {
+                reversed.Append(statment_arr[i]);
+                reversed.Append(" ");
+
+            }
+
+            Console.WriteLine(reversed);
+
+
+            #endregion
+
 
 
         }
