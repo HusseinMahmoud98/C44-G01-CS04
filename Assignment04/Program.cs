@@ -49,6 +49,22 @@
 
             return Sum;
         }
+
+
+        public static bool isPrime(uint number)
+        {
+
+            for (int i = 2; i < number; i++)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return number > 2 ? true : false;
+        }
+
         static void Main(string[] args)
         {
             #region Q01
@@ -105,17 +121,44 @@
             //    Output should be like
             //    Enter a number: 25
             //    The sum of the digits of the number 25 is: 7
-            int num;
+            //int num;
+            //bool isNum;
+
+            //do
+            //{
+            //    Console.Write("Enter a number: ");
+            //    isNum = int.TryParse(Console.ReadLine(), out num);
+            //}
+            //while (!isNum);
+
+            //Console.WriteLine($"Sum of individual digits of {num} is {SumOfIndividualDigits(num)}"); //Sum of individual digits of 45 is 9
+
+            #endregion
+
+
+
+            #region Q05
+            //5- Create a function named "IsPrime", which receives an integer number
+            //   and retuns true if it is prime, or false if it is not:
+            uint number;
             bool isNum;
 
             do
             {
                 Console.Write("Enter a number: ");
-                isNum = int.TryParse(Console.ReadLine(), out num);
+                isNum = uint.TryParse(Console.ReadLine(), out number);
             }
             while (!isNum);
 
-            Console.WriteLine($"Sum of individual digits of {num} is {SumOfIndividualDigits(num)}"); //Sum of individual digits of 45 is 9
+            if (isPrime(number))
+            {
+                Console.WriteLine($"{number} is prime");
+            }
+
+            else
+            {
+                Console.WriteLine($"{number} is not prime");
+            }
 
             #endregion
         }
