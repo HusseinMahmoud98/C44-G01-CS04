@@ -65,6 +65,25 @@
             return number > 2 ? true : false;
         }
 
+        public static void MinMaxArray(ref int[] Numbers, ref int Max, ref int Min)
+        {
+            Max = Numbers[0];
+            Min = Numbers[0];
+
+            for (int i = 1; i < Numbers.Length; i++)
+            {
+                if (Numbers[i] > Max)
+                {
+                    Max = Numbers[i];
+                }
+
+                if (Numbers[i] < Min)
+                {
+                    Min = Numbers[i];
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             #region Q01
@@ -140,25 +159,35 @@
             #region Q05
             //5- Create a function named "IsPrime", which receives an integer number
             //   and retuns true if it is prime, or false if it is not:
-            uint number;
-            bool isNum;
+            //uint number;
+            //bool isNum;
 
-            do
-            {
-                Console.Write("Enter a number: ");
-                isNum = uint.TryParse(Console.ReadLine(), out number);
-            }
-            while (!isNum);
+            //do
+            //{
+            //    Console.Write("Enter a number: ");
+            //    isNum = uint.TryParse(Console.ReadLine(), out number);
+            //}
+            //while (!isNum);
 
-            if (isPrime(number))
-            {
-                Console.WriteLine($"{number} is prime");
-            }
+            //if (isPrime(number))
+            //{
+            //    Console.WriteLine($"{number} is prime");
+            //}
 
-            else
-            {
-                Console.WriteLine($"{number} is not prime");
-            }
+            //else
+            //{
+            //    Console.WriteLine($"{number} is not prime");
+            //}
+
+            #endregion
+
+            #region Q06
+            // 6 - Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
+            int[] arr = { 3, 2, 6, 11, -3, 9 };
+            int Min = 0, Max = 0;
+            MinMaxArray(ref arr, ref Max, ref Min);
+
+            Console.WriteLine($"Max = {Max}, Min = {Min}"); //Max = 11, Min = -3
 
             #endregion
         }
