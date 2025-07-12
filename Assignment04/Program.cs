@@ -235,7 +235,34 @@
 
             Console.WriteLine(str);  //Hussein_Mahmoud
 
+            #endregion
 
+            #region Q09
+            //9- . Write a program that prints an identity matrix using for loop, in other words takes a value n from the user and shows the identity table
+            //     of size n* n.
+            Console.Write("Enter the rank of the matrix: ");
+
+            int rank = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < rank; i++)
+            {
+                for (int j = 0; j < rank; j++)
+                {
+                    if (i == j)
+                    {
+                        Console.Write("1\t");
+                    }
+
+                    else
+                    {
+                        Console.Write("0\t");
+                    }
+                }
+
+                Console.Write("\n");  //create new line for the new row
+            }
+
+            
             #endregion
 
         }
