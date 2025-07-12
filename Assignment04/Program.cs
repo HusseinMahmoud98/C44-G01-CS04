@@ -432,29 +432,64 @@ namespace Assignment04
              *  Check the Split Function (Member in String Class) Output will be a Single Console.WriteLine Statement
              */
 
-            Console.WriteLine("Enter the statment");
+            //Console.WriteLine("Enter the statment");
 
-            string statment = Console.ReadLine();
-            string[] statment_arr;
+            //string statment = Console.ReadLine();
+            //string[] statment_arr;
 
 
 
-            statment_arr = statment.Split(' ', statment.Length);
-            StringBuilder reversed = new StringBuilder();
+            //statment_arr = statment.Split(' ', statment.Length);
+            //StringBuilder reversed = new StringBuilder();
 
-            for (int i = statment_arr.Length - 1; i >= 0; i--)
-            {
-                reversed.Append(statment_arr[i]);
-                reversed.Append(" ");
+            //for (int i = statment_arr.Length - 1; i >= 0; i--)
+            //{
+            //    reversed.Append(statment_arr[i]);
+            //    reversed.Append(" ");
 
-            }
+            //}
 
-            Console.WriteLine(reversed);
+            //Console.WriteLine(reversed);
 
 
             #endregion
 
+            #region Q16
+            /* 16- Write a program to create two multidimensional arrays of same size.
+             * Accept values from the user and store them in first array. Now copy all the elements of the first array on second array and print second array. */
 
+
+            Console.Write("Enter the dimension N of the array[N][N] :");
+
+            int N = int.Parse(Console.ReadLine());
+
+            int[,] arr1 = new int[N, N];
+            int[,] arr2 = new int[N, N];
+
+
+            for (int i = 0; i < N; i++)
+            {
+                Console.WriteLine($"Enter the {i + 1}th row");
+                for (int j = 0; j < N; j++)
+                {
+                    arr1[i, j] = int.Parse(Console.ReadLine());
+                    arr2[i, j] = arr1[i, j];
+                }
+            }
+
+
+            for (int i = 0; i < N; i++)
+            {
+                Console.WriteLine($"{i + 1}th row");
+                for (global::System.Int32 j = 0; j < N; j++)
+                {
+                    Console.Write(arr2[i, j]);
+                    Console.Write(" ");
+                }
+
+                Console.Write("\n");
+            }
+            #endregion
 
         }
     }
