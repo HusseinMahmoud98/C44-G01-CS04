@@ -459,37 +459,62 @@ namespace Assignment04
              * Accept values from the user and store them in first array. Now copy all the elements of the first array on second array and print second array. */
 
 
-            Console.Write("Enter the dimension N of the array[N][N] :");
+            //Console.Write("Enter the dimension N of the array[N][N] :");
 
+            //int N = int.Parse(Console.ReadLine());
+
+            //int[,] arr1 = new int[N, N];
+            //int[,] arr2 = new int[N, N];
+
+
+            //for (int i = 0; i < N; i++)
+            //{
+            //    Console.WriteLine($"Enter the {i + 1}th row");
+            //    for (int j = 0; j < N; j++)
+            //    {
+            //        arr1[i, j] = int.Parse(Console.ReadLine());
+            //        arr2[i, j] = arr1[i, j];
+            //    }
+            //}
+
+
+            //for (int i = 0; i < N; i++)
+            //{
+            //    Console.WriteLine($"{i + 1}th row");
+            //    for (global::System.Int32 j = 0; j < N; j++)
+            //    {
+            //        Console.Write(arr2[i, j]);
+            //        Console.Write(" ");
+            //    }
+
+            //    Console.Write("\n");
+            //}
+            #endregion
+
+            #region Q17
+
+            Console.WriteLine("Enter the Dimention array N: ");
             int N = int.Parse(Console.ReadLine());
 
-            int[,] arr1 = new int[N, N];
-            int[,] arr2 = new int[N, N];
+            int[] arr = new int[N];
 
 
+            Console.WriteLine("Enter the elements of the array: ");
             for (int i = 0; i < N; i++)
             {
-                Console.WriteLine($"Enter the {i + 1}th row");
-                for (int j = 0; j < N; j++)
-                {
-                    arr1[i, j] = int.Parse(Console.ReadLine());
-                    arr2[i, j] = arr1[i, j];
-                }
+                arr[i] = int.Parse(Console.ReadLine());
             }
 
+            Console.WriteLine("in reversed order");
 
-            for (int i = 0; i < N; i++)
+            for (int i = N - 1; i >= 0; i--)
             {
-                Console.WriteLine($"{i + 1}th row");
-                for (global::System.Int32 j = 0; j < N; j++)
-                {
-                    Console.Write(arr2[i, j]);
-                    Console.Write(" ");
-                }
+                Console.Write(arr[i] + " ");
 
-                Console.Write("\n");
             }
+
             #endregion
+
 
         }
     }
