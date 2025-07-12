@@ -97,6 +97,16 @@
             }
         }
 
+        public static string ChangeChar(string str01, int Position, char newChar)
+        {
+            char[] strToArrayOfChar = str01.ToCharArray();  //convert the array into an array of char
+
+
+            strToArrayOfChar[Position] = newChar; //Update the required character
+
+            return new string(strToArrayOfChar); //return the new string object
+        }
+
         static void Main(string[] args)
         {
             #region Q01
@@ -204,18 +214,30 @@
 
             #region Q07
             ////7- Create function to calculate the factorial of the number specified as parameter
-            uint number;
-            bool isNum;
+            //uint number;
+            //bool isNum;
 
-            do
-            {
-                Console.Write("Enter a positive number: ");
-                isNum = uint.TryParse(Console.ReadLine(), out number);
-            }
-            while (!isNum);
+            //do
+            //{
+            //    Console.Write("Enter a positive number: ");
+            //    isNum = uint.TryParse(Console.ReadLine(), out number);
+            //}
+            //while (!isNum);
 
-            Console.WriteLine($"Factorial of {number} is {GetFactorial(number)}");
+            //Console.WriteLine($"Factorial of {number} is {GetFactorial(number)}");
             #endregion
+
+            #region Q08
+            //8 - Create a function named "ChangeChar" to modify a letter in a certain position(0 based) of a string, replacing it with a different letter
+            string str = "Hussein Mahmoud";
+
+            str = ChangeChar(str, 7, '_');
+
+            Console.WriteLine(str);  //Hussein_Mahmoud
+
+
+            #endregion
+
         }
     }
 }
